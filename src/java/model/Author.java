@@ -14,35 +14,50 @@ public class Author {
     public Author() {
     }
     public Author(int authorId, String authorName){
+        if(authorId <= 0 || authorName.isEmpty()){
+            throw new IllegalArgumentException();
+        }
         this.authorId = authorId;
         this.authorName = authorName;
         this.dateAdded = new Date();
     }
     public Author(int authorId) {
+        if(authorId <= 0){
+            throw new IllegalArgumentException();
+        }
         this.authorId = authorId;
     }
     
-    public int getAuthorId() {
+    public final int getAuthorId() {
         return authorId;
     }
 
-    public void setAuthorId(int authorId) {
+    public final void setAuthorId(int authorId) {
+        if(authorId <= 0){
+            throw new IllegalArgumentException();
+        }
         this.authorId = authorId;
     }
 
-    public String getAuthorName() {
+    public final String getAuthorName() {
         return authorName;
     }
 
-    public void setAuthorName(String authorName) {
+    public final void setAuthorName(String authorName) {
+        if(authorName.isEmpty()){
+            throw new IllegalArgumentException();
+        }
         this.authorName = authorName;
     }
 
-    public Date getDateAdded() {
+    public final Date getDateAdded() {
         return dateAdded;
     }
 
-    public void setDateAdded(Date dateAdded) {
+    public final void setDateAdded(Date dateAdded) {
+        if(dateAdded == null){
+            throw new IllegalArgumentException();
+        }
         this.dateAdded = dateAdded;
     }
 
