@@ -1,6 +1,6 @@
 <%-- 
-    Document   : bookDatabase
-    Created on : Feb 8, 2016, 10:26:10 AM
+    Document   : AllAuthorList
+    Created on : Feb 8, 2016, 2:56:54 PM
     Author     : Alyson
 --%>
 
@@ -39,6 +39,9 @@
                             <li>
                                 <a href="index.html">Home</a>
                             </li>
+                            <li>
+                                <a href="bookDatabase.jsp">Back</a>
+                            </li>
                             <!--<li class='dropdown'>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" id='labs'>Labs <span class="caret"></span></a>
                                 <ul class="dropdown-menu" aria-labelledby='labs'>
@@ -55,28 +58,7 @@
                 <h1 class="col-lg-4">Book Database</h1>
                 <img src="imgs/books8.png" alt="" class="img-responsive col-lg-2" style="padding-top: 1%;max-width: 100px; max-height: 100px;"/>
             </div>
-            <div class="col-lg-4">
-                <form name="allBooks" id="allBooks" class="forms form-horizontal" method="POST" action="AuthorController?page=same" onsubmit="">
-                    <fieldset>
-                        <legend>Get Books</legend>
-
-                        <div class='form-group'>
-                            <div class="col-lg-10 col-lg-offset-2">
-                                <input type="submit" name="submit" value="Get All Authors To This Page"/>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-                <form name="allBooks2" id="allBooks" class="forms form-horizontal" method="POST" action="AuthorController?page=not" onsubmit="">
-                    <fieldset>
-                        <div class='form-group'>
-                            <div class="col-lg-10 col-lg-offset-2">
-                                <input type="submit" name="submit" value="Get All Authors To Another Page"/>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+            
             <div  class="col col-lg-8">
                 <div id="answer">
                     <table class="table table-striped table-hover ">
@@ -118,3 +100,4 @@
 
     </body>
 </html>
+

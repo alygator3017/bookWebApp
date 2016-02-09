@@ -17,7 +17,11 @@ import model.AuthorService;
  */
 @WebServlet(name = "AuthorController", urlPatterns = {"/AuthorController"})
 public class AuthorController extends HttpServlet {
+
     public static final String RESULTS = "/bookDatabase.jsp";
+    public static final String RESULTS_PAGE_2 = "/allAuthorList.jsp";
+    public static final String PAGE = "page";
+    public static final String ERR = "data cannot be found";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,8 +39,16 @@ public class AuthorController extends HttpServlet {
         List<Author> authors;
         authors = as.getAllAuthors();
         request.setAttribute("authorsList", authors);
-        RequestDispatcher view = request.getRequestDispatcher(RESULTS);
-        view.forward(request, response);
+        //depending on if on same page or different page
+        String page = request.getParameter(PAGE);
+        if ("same".equals(page)) {
+            RequestDispatcher view = request.getRequestDispatcher(RESULTS);
+            view.forward(request, response);
+        } else if ("not".equals(page)) {
+            RequestDispatcher view = request.getRequestDispatcher(RESULTS_PAGE_2);
+            view.forward(request, response);
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

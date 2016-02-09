@@ -10,10 +10,16 @@ import java.util.List;
  */
 public class AuthorService {
     
-    private final List<Author> authors = new ArrayList<>(Arrays.asList(new Author(1432, "Austen, Jane"), new Author(2354, "Bronte, Charolotte"), new Author(5341, "Martin, George R.R")));
-    
+    private List<Author> authors; 
+    public AuthorService(){
+        initTestData();
+    }
     public final List<Author> getAllAuthors(){
         return authors;
+    }
+    
+    private void initTestData() {
+        authors = new ArrayList<>(Arrays.asList(new Author(1432, "Austen, Jane"), new Author(2354, "Bronte, Charolotte"), new Author(5341, "Martin, George R.R")));
     }
     
 //    public static void main(String[] args) {
@@ -23,4 +29,6 @@ public class AuthorService {
 //            System.out.println(at.toString());
 //        }
 //    }
+
+    
 }
