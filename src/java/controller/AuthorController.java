@@ -18,7 +18,6 @@ import model.AuthorService;
 @WebServlet(name = "AuthorController", urlPatterns = {"/AuthorController"})
 public class AuthorController extends HttpServlet {
 
-    private static final String RESULTS = "/bookDatabase.jsp";
     private static final String RESULTS_PAGE_2 = "/allAuthorList.jsp";
     private static final String PAGE = "page";
     private static final String ERR = "data cannot be found";
@@ -41,13 +40,8 @@ public class AuthorController extends HttpServlet {
         request.setAttribute("authorsList", authors);
         //depending on if on same page or different page
         String page = request.getParameter(PAGE);
-        if ("same".equals(page)) {
-            RequestDispatcher view = request.getRequestDispatcher(RESULTS);
-            view.forward(request, response);
-        } else if ("not".equals(page)) {
-            RequestDispatcher view = request.getRequestDispatcher(RESULTS_PAGE_2);
-            view.forward(request, response);
-        }
+        RequestDispatcher view = request.getRequestDispatcher(RESULTS_PAGE_2);
+        view.forward(request, response);
 
     }
 
