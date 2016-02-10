@@ -16,9 +16,9 @@
         <!--js needed at top for hidden field-->
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <!--sticky footer -->
-        <link href="casss/stickyfooter.css" rel="stylesheet" type="text/css"/>   
+        <link href="css/stickyfooter.css" rel="stylesheet" type="text/css"/>   
         <!--bootstrap-->
-        <link href="casss/bootstrap.paper.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.paper.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="wrapper">
@@ -86,7 +86,7 @@
             <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
         </div>
 
-        <script src="jquery/stickyfooter.js" type="text/javascript"></script>
+        <script src="js/stickyfooter.js" type="text/javascript"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>        
 
     </body>
