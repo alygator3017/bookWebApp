@@ -18,10 +18,10 @@ import model.AuthorService;
 @WebServlet(name = "AuthorController", urlPatterns = {"/AuthorController"})
 public class AuthorController extends HttpServlet {
 
-    public static final String RESULTS = "/bookDatabase.jsp";
-    public static final String RESULTS_PAGE_2 = "/allAuthorList.jsp";
-    public static final String PAGE = "page";
-    public static final String ERR = "data cannot be found";
+    private static final String RESULTS = "/bookDatabase.jsp";
+    private static final String RESULTS_PAGE_2 = "/allAuthorList.jsp";
+    private static final String PAGE = "page";
+    private static final String ERR = "data cannot be found";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
