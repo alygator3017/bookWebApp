@@ -88,14 +88,19 @@ public class DBMySqlStrategy implements DBStrategy {
         //need to grab record by author_id but because it is generic we can't actually grab by the author_id
         PreparedStatement deleteRecord = null;
         String deleteQryString = null;
-        if (primaryKey instanceof String) {
-            deleteQryString = "DELETE FROM " + tableName + " WHERE " + columnName + "= '" + primaryKey + "'";
-        }else{
-            deleteQryString = "DELETE FROM " + tableName + " WHERE " + columnName + "= " + primaryKey + "";
-        }
-        
+//        if (primaryKey instanceof String) {
+//            deleteQryString = "DELETE FROM " + tableName + " WHERE " + columnName + "= '" + primaryKey + "'";
+//        }else{
+//            deleteQryString = "DELETE FROM " + tableName + " WHERE " + columnName + "= " + primaryKey + "";
+//        }
+        deleteQryString = "DELETE FROM " + tableName + " WHERE " + columnName + "=?";
 
         deleteRecord = conn.prepareStatement(deleteQryString);
+        if (primaryKey instanceof String) {
+            deleteRecord.setString(1, primaryKey.toString());
+        }else{
+            deleteRecord.setInt(1, Integer.parseInt(primaryKey.toString()));
+        }
         System.out.println(deleteRecord);
         deleteRecord.executeUpdate();
         System.out.println("Record has been deleted");
